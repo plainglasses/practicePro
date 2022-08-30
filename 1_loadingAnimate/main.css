@@ -1,0 +1,58 @@
+body {
+  background-color: #e8e8e8;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  display: inline-block;
+
+  width: 44px;
+  height: 44px;
+}
+.loader::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  position: relative;
+  display: block;
+  background-color: blue;
+  top: 35px;
+  left: 19px;
+
+  animation: dotRect 3s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+@keyframes dotRect {
+}
+.loader svg {
+  display: block;
+  fill: none;
+  stroke: black;
+
+  stroke-width: 10px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.loader svg circle {
+  stroke-dasharray: 150 50;
+  stroke-dashoffset: 50;
+  animation: pathCircle 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+@keyframes pathCircle {
+  25% {
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dashoffset: -50;
+  }
+  75% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: -150;
+  }
+}
