@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  /* 可视100%，水平垂直居中，渐变背景 */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(200deg, #f3e7e9, #e3eeff);
+}
+.container {
+  width: 640px;
+  height: 415px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  /* 阴影，相对定位容器 */
+  background-color: #fff;
+  position: relative;
+}
+
+.form-box {
+  position: absolute;
+  /* 点击button之后以本身的长宽为参考平移80% */
+  transform: translateX("0%");
+  top: -10%;
+  left: 4%;
+  width: 320px;
+  height: 500px;
+  background-color: #d3b7d8;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  display: flex;
+  z-index: 2;
+  align-items: center;
+  justify-content: center;
+  /* 动画过渡，加速后减速 */
+  transition: 0.5s ease-in-out;
+}
+.register-box,
+.login-box {
+  /* 弹性布局，垂直排列 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.hidden {
+  display: none;
+  transition: 0.5s;
+}
+h1 {
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 5px;
+}
+input {
+  background: transparent;
+  width: 70%;
+  color: #fff;
+  border: none;
+  /* 下边框样式 */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 10px 0;
+  text-indent: 10px;
+  margin: 8px 0;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+/* 自定义input元素的占位文本的样式 */
+input::placeholder {
+  color: #fff;
+}
+/* 获得焦点的输入字段，并设置其样式 */
+input:focus {
+  color: #a262ad;
+  /* 取消默认的加黑 */
+  outline: none;
+  border-bottom: 1px solid #a262ad80;
+  transition: 0.5s;
+}
+.form-box button {
+  width: 70%;
+  margin-top: 35px;
+  background-color: #f6f6f6;
+  outline: none;
+  border-radius: 8px;
+  padding: 13px;
+  color: #a2a6ad;
+  letter-spacing: 2px;
+  border: none;
+  cursor: pointer;
+}
+
+.form-box button:hover {
+  background-color: #a262ad;
+  transition: 0.5s ease;
+}
+input:focus::placeholder {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+/* 底层样式 */
+.con-box {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  /*在position为aboslute的情况下垂直居中*/
+  top: 50%;
+  transform: translateY(-50%);
+}
+.con-box h2 {
+  color: #8e9aaf;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-align: center;
+  margin-bottom: 4px;
+}
+.con-box p {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #8e9aaf;
+  text-align: center;
+}
+.con-box span {
+  color: #d3b7d8;
+}
+.left {
+  left: -2%;
+}
+.right {
+  right: -2%;
+}
+.box-right img {
+  width: 150px;
+  height: 150px;
+  opacity: 0.9;
+  margin: 40px 0;
+}
+.box-left img {
+  width: 150px;
+  height: 150px;
+}
+.con-box .bottom p {
+  margin-top: 3%;
+}
+.con-box button {
+  margin-top: 10px;
+  background-color: #fff;
+  color: #a262ad;
+  border: 1px solid #d3b7d8;
+  padding: 6px 10px;
+  letter-spacing: 1px;
+  outline: none;
+}
+.con-box button:hover {
+  background-color: #a262ad;
+  color: #fff;
+  cursor: pointer;
+}
